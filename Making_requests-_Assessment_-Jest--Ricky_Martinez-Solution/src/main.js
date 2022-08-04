@@ -5,13 +5,13 @@ function index() {
   return axios
     .get(BASE_URL + "/constellations")
     .then((response) => {
-      console.log(response)
+      console.log(response.data)
     })
 }
 
 function create(body) {
   return axios
-    .post(`${BASE_URL}/constellations/${body}`)
+    .post(`${BASE_URL}/constellations`, body)
     .then((response) => {
       console.log(response.data)
     })
@@ -21,7 +21,7 @@ function show(id) {
   return axios
     .get(`${BASE_URL}/constellations/${id}`)
     .then((response) => {
-      console.log(response.data.id)
+      console.log(response.data)
     })
 }
 
